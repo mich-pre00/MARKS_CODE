@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARK'S - Acceso Administrativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagen/LOGO MARK´S.png" alt="MARK'S Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="index.html" class="nav-btn active">Inicio</a></li>
+                <li><a href="como-funciona.html" class="nav-btn">¿Cómo funciona?</a></li>
+                <li><a href="comercio-local.html" class="nav-btn">Comercio Local</a></li>
+                <li><a href="ahorros.html" class="nav-btn">Ahorros y Alertas</a></li>
+                <li><a href="supermercados.html" class="nav-btn">Para supermercados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO: INICIO -->
+    <section class="main-section hero-layout">
+        <!-- LADO IZQUIERDO: TEXTO Y CONTENEDOR CENTRADO -->
+        <div class="hero-left-content">
+            <div class="content-box">
+                <h1>PORTAL DE ADMINISTRACIÓN Y SUPERVISIÓN</h1>
+                <p>Gestiona el inventario, monitorea alertas de caducidad y analiza las ventas de tu supermercado en tiempo real con MARK'S.</p>
+            </div>
+
+            <!-- Fila centrada con la imagen a la izquierda y el botón a la derecha -->
+            <div class="center-showcase-row">
+                <div class="mockup-container">
+                    <img src="imagen/imagen_inicio.png" alt="MARK'S Mockup" class="mockup-img">
+                </div>
+                <div class="action-side-container">
+                    <a href="supermercados.html" class="btn-verde">Descarga la APP</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LADO DERECHO: TARJETA DE LOGIN ADMINISTRATIVO -->
+        <div class="visual-card" id="login">
+            <div class="login-container">
+                <h2>Acceso Admin</h2>
+                <!-- REDIRECCIÓN AL PANEL DE ADMINISTRACIÓN -->
+                <form action="panel.html" method="GET" class="login-form">
+                    <div class="input-group">
+                        <label for="email">Correo / Usuario</label>
+                        <input type="email" id="email" name="email" placeholder="admin@supermercado.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#" class="forgot-pass">¿Olvidaste tu credencial?</a>
+                    </div>
+                    <button type="submit" class="btn-login">Ingresar</button>
+                </form>
+                <div class="login-footer">
+                    <p>¿Eres un nuevo comercio? <a href="supermercados.html">Registrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
