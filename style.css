@@ -1,0 +1,402 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+/* ==========================================
+   KEYFRAMES (Animaciones)
+   ========================================== */
+
+/* Entrada suave desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Entrada desde la derecha */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Flotación continua para el celular */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Pulso de luz continuo para el botón principal */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 10px rgba(114, 219, 81, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 22px rgba(114, 219, 81, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 10px rgba(114, 219, 81, 0.4);
+    }
+}
+
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN SUPERIOR
+   ========================================== */
+
+.navbar {
+    background-color: #72db51;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-buttons {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Botones del menú */
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    background-color: #ffffff;
+    color: #3b8a22;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+
+/* ==========================================
+   ESTRUCTURA Y CONTENIDO PRINCIPAL
+   ========================================== */
+
+.main-section {
+    background: white;
+    width: 85%;
+    margin: 40px auto;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    /* Animación de entrada al cargar */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-layout {
+    flex-direction: row;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Sección izquierda: Texto e Imagen con Botón centrados */
+.hero-left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente */
+    text-align: center;
+    gap: 30px;
+}
+
+.content-box h1 {
+    font-size: 36px;
+    color: #2b581b;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Fila centrada: Celular a la izquierda, Botón a la derecha */
+.center-showcase-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Contenedor e imagen del celular */
+.mockup-container {
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 15px;
+
+    /* Animación de flotación continua */
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Contenedor del botón */
+.action-side-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón Verde Principal (Descargar la APP) */
+.btn-verde {
+    display: inline-block;
+    background-color: #72db51;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+
+    /* Animación de pulso continuo e interacción */
+    animation: pulse 2.5s infinite;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-verde:hover {
+    background-color: #5ec03e;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(114, 219, 81, 0.6);
+}
+
+.btn-verde:active {
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* ==========================================
+   TARJETA DE LOGIN
+   ========================================== */
+
+.visual-card {
+    background: linear-gradient(135deg, #eafbe3, #d4f5c7);
+    width: 360px;
+    flex-shrink: 0;
+    padding: 25px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 5px solid #fff;
+
+    /* Animación de entrada deslizante */
+    animation: fadeInRight 0.9s ease-out forwards;
+}
+
+.login-container {
+    background: white;
+    width: 100%;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.login-container h2 {
+    color: #2b581b;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #72db51;
+    box-shadow: 0 0 8px rgba(114, 219, 81, 0.4);
+    transform: scale(1.01);
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.forgot-pass {
+    font-size: 12px;
+    color: #3b8a22;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    background-color: #72db51;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #5ec03e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(114, 219, 81, 0.4);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+.login-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #2b581b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   RESPONSIVO PARA MÓVILES
+   ========================================== */
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .nav-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-layout {
+        flex-direction: column;
+    }
+    .hero-left-content {
+        width: 100%;
+    }
+    .center-showcase-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .visual-card {
+        width: 100%;
+        max-width: 380px;
+        margin: 20px auto;
+    }
+}
