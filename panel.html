@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARK'S - Panel de Administración</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN SUPERIOR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagen/LOGO MARK´S.png" alt="MARK'S Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="panel.html" class="nav-btn active">Dashboard Admin</a></li>
+                <li><a href="#historial-compras" class="nav-btn">Historial Compras</a></li>
+                <li><a href="productos-vendidos.html" class="nav-btn">Más Vendidos</a></li>
+                <li><a href="#" class="nav-btn">Inventario</a></li>
+                <li><a href="#" class="nav-btn">Alertas y Ofertas</a></li>
+                <li><a href="index.html" class="nav-btn" style="background-color: rgba(229, 57, 53, 0.4);">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: PANEL DE ADMINISTRACIÓN -->
+    <section class="main-section hero-layout">
+        <!-- CONTENIDO IZQUIERDO: RESUMEN OPERATIVO Y ACCIONES RÁPIDAS -->
+        <div class="hero-left-content">
+            <div class="content-box">
+                <h1>Panel de Control de Tienda 🏪</h1>
+                <p>Supervisa las operaciones activas, valida compras sin filas y administra ofertas locales en la sucursal de Nuevo León.</p>
+            </div>
+
+            <div class="center-showcase-row">
+                <div class="mockup-container">
+                    <img src="imagen/imagen_inicio.png" alt="MARK'S App Admin" class="mockup-img">
+                </div>
+                <div class="action-side-container" style="flex-direction: column; gap: 12px; width: 100%; max-width: 250px;">
+                    <a href="productos-vendidos.html" class="btn-verde" style="width: 100%; text-align: center;">🔥 Productos Más Vendidos</a>
+                    <a href="#" class="btn-verde" style="background-color: #3b8a22; width: 100%; text-align: center;">📦 Gestionar Inventario</a>
+                    <a href="#" class="btn-verde" style="background-color: #2b581b; width: 100%; text-align: center;">⚠️ Alertas de Caducidad</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO DERECHO: TARJETA DE MÉTRICAS ADMINISTRATIVAS -->
+        <div class="visual-card">
+            <div class="login-container">
+                <h2 style="margin-bottom: 10px;">Resumen Sucursal</h2>
+                
+                <div style="background: #f8faf7; border: 1px solid #c8e6c9; border-radius: 12px; padding: 15px; margin-bottom: 15px; text-align: center;">
+                    <span style="font-size: 12px; color: #666; font-weight: bold; text-transform: uppercase;">Ventas del Día (Express)</span>
+                    <h3 style="font-size: 26px; color: #2b581b; margin-top: 5px;">$18,450.00 MXN</h3>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; text-align: left; font-size: 13px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 6px;">
+                        <span>🛒 Usuarios en Tienda:</span>
+                        <strong>34 activos</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 6px;">
+                        <span>⚡ Transacciones sin Filas:</span>
+                        <strong>142 completadas</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 6px;">
+                        <span>⚠️ Alertas Próximas a Vencer:</span>
+                        <strong style="color: #d32f2f;">8 productos</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 6px;">
+                        <span>🌱 Productos Locales Vendidos:</span>
+                        <strong>58 ítems</strong>
+                    </div>
+                </div>
+
+                <a href="index.html" class="btn-login" style="display: block; text-align: center; text-decoration: none; margin-top: 20px; background-color: #e53935;">
+                    Cerrar Sesión Admin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- APARTADO: HISTORIAL DE COMPRAS DE LOS USUARIOS -->
+    <section class="main-section" id="historial-compras" style="margin-top: -10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+            <div>
+                <h2 style="color: #2b581b; font-size: 24px; margin-bottom: 5px;">📜 Historial de Compras de Usuarios</h2>
+                <p style="color: #666; font-size: 14px;">Registro de transacciones escaneadas y pagadas desde la aplicación en tiempo real.</p>
+            </div>
+            
+            <!-- Barra de búsqueda rápida -->
+            <div style="display: flex; gap: 10px;">
+                <input type="text" placeholder="Buscar por ID o usuario..." style="padding: 8px 14px; border: 1px solid #c8e6c9; border-radius: 8px; outline: none; font-size: 13px;">
+                <button style="background-color: #72db51; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold; cursor: pointer;">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Tabla interactiva -->
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                <thead>
+                    <tr style="background-color: #eafbe3; color: #2b581b; border-bottom: 2px solid #c8e6c9;">
+                        <th style="padding: 12px;">ID Orden</th>
+                        <th style="padding: 12px;">Usuario / Cliente</th>
+                        <th style="padding: 12px;">Hora</th>
+                        <th style="padding: 12px;">Productos</th>
+                        <th style="padding: 12px;">Monto Total</th>
+                        <th style="padding: 12px;">Estado</th>
+                        <th style="padding: 12px; text-align: center;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 12px; font-weight: bold; color: #555;">#MRK-8092</td>
+                        <td style="padding: 12px;">María González</td>
+                        <td style="padding: 12px; color: #777;">14:32 hrs</td>
+                        <td style="padding: 12px;">Leche Entera LALA 1L (x2), Pan Artesanal, Queso Fresco NL</td>
+                        <td style="padding: 12px; font-weight: bold; color: #2b581b;">$215.00 MXN</td>
+                        <td style="padding: 12px;"><span style="background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">✔ Completado</span></td>
+                        <td style="padding: 12px; text-align: center;"><a href="#" style="color: #3b8a22; font-weight: bold; text-decoration: none;">Ver Recibo</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 12px; font-weight: bold; color: #555;">#MRK-8091</td>
+                        <td style="padding: 12px;">Carlos Rodríguez</td>
+                        <td style="padding: 12px; color: #777;">14:28 hrs</td>
+                        <td style="padding: 12px;">Manzana Red Delicious (1kg), Café Regio Gourmet, Detergente</td>
+                        <td style="padding: 12px; font-weight: bold; color: #2b581b;">$340.50 MXN</td>
+                        <td style="padding: 12px;"><span style="background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">✔ Completado</span></td>
+                        <td style="padding: 12px; text-align: center;"><a href="#" style="color: #3b8a22; font-weight: bold; text-decoration: none;">Ver Recibo</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 12px; font-weight: bold; color: #555;">#MRK-8090</td>
+                        <td style="padding: 12px;">Ana Sofía Treviño</td>
+                        <td style="padding: 12px; color: #777;">14:15 hrs</td>
+                        <td style="padding: 12px;">Agua Ciel 1.5L (x3), Machacado Artesanal NL</td>
+                        <td style="padding: 12px; font-weight: bold; color: #2b581b;">$188.00 MXN</td>
+                        <td style="padding: 12px;"><span style="background: #fff3e0; color: #ef6c00; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">⏳ Salida en Verificación</span></td>
+                        <td style="padding: 12px; text-align: center;"><a href="#" style="color: #3b8a22; font-weight: bold; text-decoration: none;">Ver Recibo</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 12px; font-weight: bold; color: #555;">#MRK-8089</td>
+                        <td style="padding: 12px;">Roberto Garza</td>
+                        <td style="padding: 12px; color: #777;">13:50 hrs</td>
+                        <td style="padding: 12px;">Carne para Asar Rib Eye (1.5kg), Carbón, Salsa Casera NL</td>
+                        <td style="padding: 12px; font-weight: bold; color: #2b581b;">$520.00 MXN</td>
+                        <td style="padding: 12px;"><span style="background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">✔ Completado</span></td>
+                        <td style="padding: 12px; text-align: center;"><a href="#" style="color: #3b8a22; font-weight: bold; text-decoration: none;">Ver Recibo</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
